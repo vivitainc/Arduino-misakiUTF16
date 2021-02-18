@@ -8,7 +8,7 @@
 
 
 #include <avr/pgmspace.h>
-#include <arduino.h>
+#include <Arduino.h>
 #include "misakiUTF16.h"
 #include "misakiUTF16FontData.h"
 
@@ -202,7 +202,6 @@ byte charUFT8toUTF16(char *pUTF8, uint16_t *pUTF16) {
 byte Utf8ToUtf16(uint16_t* pUTF16, char *pUTF8) {
   int len = 0;
   int n;
-  uint16_t wstr;
 
   while (*pUTF8) {
     n = charUFT8toUTF16(pUTF8, pUTF16);

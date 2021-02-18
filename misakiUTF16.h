@@ -1,30 +1,30 @@
-// 
-// misakiUTF16.h ”üçƒtƒHƒ“ƒgƒhƒ‰ƒCƒo ƒwƒbƒ_[ƒtƒ@ƒCƒ‹ v1.1B by ‚½‚Ü‹g‚³‚ñ 2016/03/15
-// “à•”ƒtƒ‰ƒbƒVƒ…ƒƒ‚ƒŠƒo[ƒWƒ‡ƒ“
+ï»¿// 
+// misakiUTF16.h ç¾å’²ãƒ•ã‚©ãƒ³ãƒˆãƒ‰ãƒ©ã‚¤ãƒ ãƒ˜ãƒƒãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ« v1.1B by ãŸã¾å‰ã•ã‚“ 2016/03/15
+// å†…éƒ¨ãƒ•ãƒ©ãƒƒã‚·ãƒ¥ãƒ¡ãƒ¢ãƒªãƒãƒ¼ã‚¸ãƒ§ãƒ³
 //
-// 2016/03/16 ‘SŠp¬•¶š‰p”š‚Ì•s‹ï‡‘Î‰
-// 2016/07/05 getFontData()ŠÖ”‚Ì’Ç‰Á
+// 2016/03/16 å…¨è§’å°æ–‡å­—è‹±æ•°å­—ã®ä¸å…·åˆå¯¾å¿œ
+// 2016/07/05 getFontData()é–¢æ•°ã®è¿½åŠ 
 //
 
 #ifndef misakiUTF16_h
 #define misakiUTF16_h
 
 #include <avr/pgmspace.h>
-#include <arduino.h>
+#include <Arduino.h>
 
-#define FTABLESIZE     1000      // ƒtƒHƒ“ƒgƒe[ƒuƒ‹ƒf[ƒ^ƒTƒCƒY
-#define FONT_LEN       8         // 1ƒtƒHƒ“ƒg‚ÌƒoƒCƒg”
+#define FTABLESIZE     1000      // ãƒ•ã‚©ãƒ³ãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º
+#define FONT_LEN       8         // 1ãƒ•ã‚©ãƒ³ãƒˆã®ãƒã‚¤ãƒˆæ•°
 
-extern PROGMEM const uint8_t fdata[];						// ƒtƒHƒ“ƒgƒf[ƒ^
-extern PROGMEM const uint16_t ftable [];					// ƒCƒ“ƒfƒbƒNƒXƒe[ƒuƒ‹
+extern PROGMEM const uint8_t fdata[];						// ãƒ•ã‚©ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿
+extern PROGMEM const uint16_t ftable [];					// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒ†ãƒ¼ãƒ–ãƒ«
 
-int findcode(uint16_t  ucode) ;								// ƒtƒHƒ“ƒgƒR[ƒhŒŸõ
-boolean getFontDataByUTF16(byte* fontdata, uint16_t utf16) ;// UTF16‚É‘Î‰‚·‚é”üçƒtƒHƒ“ƒgƒf[ƒ^8ƒoƒCƒg‚ğæ“¾
-uint16_t hkana2kana(uint16_t ucode);						// ”¼ŠpƒJƒi‚ğ‘SŠp‚É•ÏŠ·
-uint16_t utf16_HantoZen(uint16_t utf16); 					// UTF16”¼ŠpƒR[ƒh‚ğUTF16‘SŠpƒR[ƒh‚É•ÏŠ·
-byte charUFT8toUTF16(char *pUTF8, uint16_t *pUTF16);		// UTF8•¶š(1`3ƒoƒC)‚ğUTF16‚É•ÏŠ·
-byte Utf8ToUtf16(uint16_t* pUTF16, char *pUTF8);			// UTF8•¶š—ñ‚ğUTF16•¶š—ñ‚É•ÏŠ·
+int findcode(uint16_t  ucode) ;								// ãƒ•ã‚©ãƒ³ãƒˆã‚³ãƒ¼ãƒ‰æ¤œç´¢
+boolean getFontDataByUTF16(byte* fontdata, uint16_t utf16) ;// UTF16ã«å¯¾å¿œã™ã‚‹ç¾å’²ãƒ•ã‚©ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿8ãƒã‚¤ãƒˆã‚’å–å¾—
+uint16_t hkana2kana(uint16_t ucode);						// åŠè§’ã‚«ãƒŠã‚’å…¨è§’ã«å¤‰æ›
+uint16_t utf16_HantoZen(uint16_t utf16); 					// UTF16åŠè§’ã‚³ãƒ¼ãƒ‰ã‚’UTF16å…¨è§’ã‚³ãƒ¼ãƒ‰ã«å¤‰æ›
+byte charUFT8toUTF16(char *pUTF8, uint16_t *pUTF16);		// UTF8æ–‡å­—(1ã€œ3ãƒã‚¤)ã‚’UTF16ã«å¤‰æ›
+byte Utf8ToUtf16(uint16_t* pUTF16, char *pUTF8);			// UTF8æ–‡å­—åˆ—ã‚’UTF16æ–‡å­—åˆ—ã«å¤‰æ›
 
-char* getFontData(byte* fontdata,char *pUTF8);              // w’è‚µ‚½UTF8•¶š—ñ‚Ìæ“ª‚ÌƒtƒHƒ“ƒgƒf[ƒ^‚Ìæ“¾
+char* getFontData(byte* fontdata,char *pUTF8);              // æŒ‡å®šã—ãŸUTF8æ–‡å­—åˆ—ã®å…ˆé ­ã®ãƒ•ã‚©ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿ã®å–å¾—
 
 #endif
