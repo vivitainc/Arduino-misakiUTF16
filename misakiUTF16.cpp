@@ -65,7 +65,7 @@ int findcode(uint16_t  ucode)  {
    }
  } 
 
- if (!flg_stop) {
+ if (flg_stop < 0) {
     return -1;
  }
  return pos;    
@@ -93,7 +93,7 @@ return ucode;
 //   戻り値: true 正常終了１, false 異常終了
 //
 boolean getFontDataByUTF16(byte* fontdata, uint16_t utf16) {
-  uint16_t code;
+  int code;
   unsigned long addr;
   byte n;
  
@@ -104,7 +104,7 @@ boolean getFontDataByUTF16(byte* fontdata, uint16_t utf16) {
     return false;
   }
   
-  addr = code;
+  addr = (uint16_t)code;
   addr<<=3;
   n =  Sequential_read(addr, fontdata, (byte)FONT_LEN);
   if (n!=8) {
