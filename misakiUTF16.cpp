@@ -10,7 +10,7 @@
 #include <avr/pgmspace.h>
 #include <arduino.h>
 #include "misakiUTF16.h"
-#include "misakiUTF16FontData.inc"
+#include "misakiUTF16FontData.h"
 
 // 半角カナ全角変換テーブル
 static uint8_t _hkremap [] = {
