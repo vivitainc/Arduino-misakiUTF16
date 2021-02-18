@@ -12,7 +12,7 @@
 #include <avr/pgmspace.h>
 #include <Arduino.h>
 
-#define FTABLESIZE     1000      // フォントテーブルデータサイズ
+#define FTABLESIZE     94        // フォントテーブルデータサイズ
 #define FONT_LEN       8         // 1フォントのバイト数
 
 extern PROGMEM const uint8_t fdata[];						// フォントデータ
